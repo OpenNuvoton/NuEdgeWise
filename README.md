@@ -6,15 +6,15 @@ Tiny ML Tool for training and deployment with TF Lite on Nuvoton's MCU/MPU.
 
 ## 1. Tool Table
 
-| Tool | Use Case | Model | Description |M467|M55+U55|MA35D1|
-| :-- | :-- | :--| :--|:--|:--|:--|
-| [ML_nuKws](https://github.com/OpenNuvoton/ML_nuKws)  | Keyword Spotting | DNN/DS-CNN | Small vocabulary(<=1s) keyword spotting. | <ul><li>- [x] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |
-| [ML_G-sensor](https://github.com/OpenNuvoton/ML_G-sensor) | Gesture Recognition Magic Wand  | CNN| Data is 3-dims accelerometer of different gesture, and we provide data collecting in this Tool.|<ul><li>- [x] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |
-| [ML_tf2_image_classfication_nu](https://github.com/OpenNuvoton/ML_tf2_image_classfication_nu) | Image Classification | MobileNet | Use Transfer learning & fine tune, and the pre-train model is MobileNet with imageNet data. User can train with their own data.|<ul><li>- [ ] ok</li> |<ul><li>- [x] ok</li> |<ul><li>- [x] ok</li> |
-| [ML_tf2_object_detection_nu](https://github.com/OpenNuvoton/ML_tf2_object_detection_nu) | Object Detection | SSD_MobileNet_fpnlite v2/v3| Use TF objection detection API and it also supports many other models. We choose the tinier model for MPU's edge use-case. If user wants to try SSD_MobileNet_fpnlite_v3, please use TF1 env which detail is in the link.|<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [x] ok</li> |
-| [ML_yolo](https://github.com/OpenNuvoton/ML_yolo) | Object Detection | Yolo-fastest v1| Use DarkNet training with very tiny Yolo model. This tool including converting to TFlite & Vela source file.|<ul><li>- [ ] ok</li> |<ul><li>- [x] ok</li> |<ul><li>- [x] ok</li> |
-| [ML_Gearbox_Fault_Diagnosis](https://github.com/OpenNuvoton/ML_Gearbox_Fault_Diagnosis) |Anomaly Detection | DNN/Autoencoder | A basic practice for Tiny ML which including training a model, converting to tflite and deploy on EVK board.|<ul><li>- [x] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |
-| [VWW](https://github.com/OpenNuvoton/ML_tf2_image_classfication_nu) | Visual Wake Words | Small MobileNet rgb/gray | Microcontroller vision use-case of identifying whether a person (we can change to other object) is present in the image or not. |<ul><li>- [x] ok</li>|<ul><li>- [x] ok</li>|<ul><li>- [ ] ok</li>|  
+| Tool | Use Case | Model | Description |M467|MA35D1|
+| :-- | :-- | :--| :--|:--|:--|
+| [ML_nuKws](https://github.com/OpenNuvoton/ML_nuKws)  | Keyword Spotting | DNN/DS-CNN | Small vocabulary(<=1s) keyword spotting. |  |:heavy_check_mark: |
+| [ML_G-sensor](https://github.com/OpenNuvoton/ML_G-sensor) | Gesture Recognition Magic Wand  | CNN| Data is 3-dims accelerometer of different gesture, and we provide data collecting in this Tool.|:heavy_check_mark:| |
+| [ML_tf2_image_classfication_nu](https://github.com/OpenNuvoton/ML_tf2_image_classfication_nu) | Image Classification | MobileNet | Use Transfer learning & fine tune, and the pre-train model is MobileNet with imageNet data. User can train with their own data.| |:heavy_check_mark: |
+| [ML_tf2_object_detection_nu](https://github.com/OpenNuvoton/ML_tf2_object_detection_nu) | Object Detection | SSD_MobileNet_fpnlite v2/v3| Use TF objection detection API and it also supports many other models. We choose the tinier model for MPU's edge use-case. If user wants to try SSD_MobileNet_fpnlite_v3, please use TF1 env which detail is in the link.| |:heavy_check_mark: |
+| [ML_yolo](https://github.com/OpenNuvoton/ML_yolo) | Object Detection | Yolo-fastest v1| Use DarkNet training with very tiny Yolo model. This tool including converting to TFlite & Vela source file.| |:heavy_check_mark: |
+| [ML_Gearbox_Fault_Diagnosis](https://github.com/OpenNuvoton/ML_Gearbox_Fault_Diagnosis) |Anomaly Detection | DNN/Autoencoder | A basic practice for Tiny ML which including training a model, converting to tflite and deploy on EVK board.|:heavy_check_mark: | |
+| [VWW](https://github.com/OpenNuvoton/ML_tf2_image_classfication_nu) | Visual Wake Words | Small MobileNet rgb/gray | Microcontroller vision use-case of identifying whether a person (we can change to other object) is present in the image or not. |:heavy_check_mark: | |  
 
 ## 2. Installation & Env Create
 ### A. Install Anaconda
