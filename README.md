@@ -1,35 +1,33 @@
 # NuEdgeWise
-Tiny ML Tool for training and deployment with TF Lite on Nuvoton's MCU/MPU. 
+The Tiny ML Tool provides a platform for training and deployment using TensorFlow Lite on Nuvoton's MCU/MPU. 
 ---
-- These NuEdgeWise tools offer Jupyter notebooks with friendly UI to work with tiny-ML easily.
-- Follow [second](#2-installation--env-create) & [third](#3-choose-your-use-caseapplication) points to install the python env once and play with all below ML Tool/example. 
+- The NuEdgeWise tools offer Jupyter Notebooks with a user-friendly interface, simplifying the process of working with Tiny ML.
+- Please follow [second](#2-installation--env-create) & [third](#3-choose-your-use-caseapplication) steps to install the Python environment once and explore all the ML tools/examples provided below. 
 
 ## 1. Tool Table
-
-| Tool | Use Case | Model | Description |M467|M55+U55|MA35D1|
-| :-- | :-- | :--| :--|:--|:--|:--|
-| [ML_nuKws](https://github.com/OpenNuvoton/ML_nuKws)  | Keyword Spotting | DNN/DS-CNN | Small vocabulary(<=1s) keyword spotting. | <ul><li>- [x] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |
-| [ML_G-sensor](https://github.com/OpenNuvoton/ML_G-sensor) | Gesture Recognition Magic Wand  | CNN| Data is 3-dims accelerometer of different gesture, and we provide data collecting in this Tool.|<ul><li>- [x] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |
-| [ML_tf2_image_classfication_nu](https://github.com/OpenNuvoton/ML_tf2_image_classfication_nu) | Image Classification | MobileNet | Use Transfer learning & fine tune, and the pre-train model is MobileNet with imageNet data. User can train with their own data.|<ul><li>- [ ] ok</li> |<ul><li>- [x] ok</li> |<ul><li>- [x] ok</li> |
-| [ML_tf2_object_detection_nu](https://github.com/OpenNuvoton/ML_tf2_object_detection_nu) | Object Detection | SSD_MobileNet_fpnlite v2/v3| Use TF objection detection API and it also supports many other models. We choose the tinier model for MPU's edge use-case. If user wants to try SSD_MobileNet_fpnlite_v3, please use TF1 env which detail is in the link.|<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [x] ok</li> |
-| [ML_yolo](https://github.com/OpenNuvoton/ML_yolo) | Object Detection | Yolo-fastest v1| Use DarkNet training with very tiny Yolo model. This tool including converting to TFlite & Vela source file.|<ul><li>- [ ] ok</li> |<ul><li>- [x] ok</li> |<ul><li>- [x] ok</li> |
-| [ML_Gearbox_Fault_Diagnosis](https://github.com/OpenNuvoton/ML_Gearbox_Fault_Diagnosis) |Anomaly Detection | DNN/Autoencoder | A basic practice for Tiny ML which including training a model, converting to tflite and deploy on EVK board.|<ul><li>- [x] ok</li> |<ul><li>- [ ] ok</li> |<ul><li>- [ ] ok</li> |
-| [VWW](https://github.com/OpenNuvoton/ML_tf2_image_classfication_nu) | Visual Wake Words | Small MobileNet rgb/gray | Microcontroller vision use-case of identifying whether a person (we can change to other object) is present in the image or not. |<ul><li>- [x] ok</li>|<ul><li>- [x] ok</li>|<ul><li>- [ ] ok</li>|  
+| Tool | Use Case | Model | Description |M467|MA35D1|
+| :-- | :-- | :--| :--|:--|:--|
+| [ML_KWS](https://github.com/OpenNuvoton/ML_KWS)  | Keyword Spotting | DNN/DS-CNN | Small vocabulary(<=1s) keyword spotting. | :heavy_check_mark: | |
+| [ML_G-Sensor](https://github.com/OpenNuvoton/ML_G-Sensor) | Gesture Recognition Magic Wand  | CNN| The data consists of 3-dimensional accelerometer readings captured during various gestures. In this Tool, we provide functionality for data collection.|:heavy_check_mark:| |
+| [ML_Image_Classification](https://github.com/OpenNuvoton/ML_Image_Classification) | Image Classification | MobileNet | We utilize transfer learning and fine-tuning techniques, where the pre-trained model is MobileNet trained on the ImageNet dataset. Users have the flexibility to train the model further with their own data.| |:heavy_check_mark: |
+| [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) | Object Detection | SSD_MobileNet_fpnlite v2/v3| We utilize the TensorFlow Object Detection API, which supports various models. For our MPU's edge use-case, we opt for a smaller model. If users wish to experiment with SSD_MobileNet_fpnlite_v3, please use the TF1 environment. More details regarding the TF1 environment can be found in the provided link.| |:heavy_check_mark: |
+| [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO) | Object Detection | Yolo-fastest v1| We use DarkNet training with a highly compact YOLO model. This tool provides features for converting the model to TensorFlow Lite format and optimizing it using Vela.| |:heavy_check_mark: |
+| [ML_Gearbox_Fault_Diagnosis](https://github.com/OpenNuvoton/ML_Gearbox_Fault_Diagnosis) |Anomaly Detection | DNN/Autoencoder | A basic practice for Tiny ML includes training a model, converting it to TFLite format, and deploying it on an EVK.|:heavy_check_mark: | |
+| [ML_VWW](https://github.com/OpenNuvoton/ML_VWW) | Visual Wake Words | Small MobileNet RGB/gray | In the microcontroller vision use-case, the objective is to identify whether a person (or any other object of interest) is present in an image. |:heavy_check_mark: | |  
 
 ## 2. Installation & Env Create
 ### A. Install Anaconda
-- Download the [Anaconda](https://www.anaconda.com/download) and install it.
-- If you are familiar with python and virtual environment, you can skip this. However please use JupyterLab or Jupyter notebook.
-### B. Create this [NuEdgeWise](https://github.com/MaxCYCHEN/NuEdgeWise) virtual environment
-- Open JupyterLab from the icon. 
-- Open the `create_env.ipynb` and follow the easy instructions. 
-- Almost all needed python packages are installed in this anaconda-env. In addition to [ML_tf2_object_detection_nu](https://github.com/OpenNuvoton/ML_tf2_object_detection_nu) needs further installation steps. (Recommend to install this as followed.)
+- Please download and install [Anaconda](https://www.anaconda.com/download) .
+- If you are already familiar with Python and virtual environments, you can skip this step. However, please make sure to use JupyterLab or Jupyter Notebook as your environment.
+### B. Create [NuEdgeWise](https://github.com/MaxCYCHEN/NuEdgeWise) virtual environment
+- Open JupyterLab by clicking on the icon. 
+- Then, open the "create_env.ipynb" notebook and follow the provided instructions. 
+- Almost all the required Python packages are already installed in this Anaconda environment. However, for ML_Object_Detection, additional installation steps are required. It is recommended to follow the installation steps provided in the [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) repository.
 
 ## 3. Choose your use case/application
-### A. Usage
-- Download the directory from the above table and open Anaconda choosing the `NuEdgeWise`.
-- Please check the readme in [Tools](#1-tool-table) for understanding how to use it. 
-- Now you can start the tiny-ml example from Jupyter-notebook.
+- Download the directory from the table above and open Anaconda, selecting the NuEdgeWise environment.
+- Please refer to the readme in the [Tools](#1-tool-table) section for instructions on how to use it.
+- Now you can start running the Tiny-ML examples from the Jupyter notebook in each [Tools](#1-tool-table).
 ## 4. Description
 - Fig1: The general workflow of our tiny ML tools.
 ```mermaid
@@ -53,7 +51,7 @@ flowchart LR
   B-->C
   E-->|Yes|F
 ```
-- All these Tools are able to train with custom dataset and convert to deployment style(TFlite/TFlite for Microcontrollers).
-- (*2) [ML_nuKws](https://github.com/OpenNuvoton/ML_nuKws) and [ML_G-sensor](https://github.com/OpenNuvoton/ML_G-sensor) are able to collect data by nuvoTon EVK board.
-- [ML_tf2_image_classfication_nu](https://github.com/OpenNuvoton/ML_tf2_image_classfication_nu) and [ML_yolo](https://github.com/OpenNuvoton/ML_yolo) are also support vela compiler for MCU+NPU use-case. Other Tools/models are able to convert to vela too by reference [ML_yolo](https://github.com/OpenNuvoton/ML_yolo) `vela/`.
-- In each Tool/use-case, we also support example inference code on nuvoTon MCU/MPU devices. 
+- All of these tools can be used to train with custom datasets and convert them to deployment-ready formats such as TFLite or TFLite for Microcontrollers.
+- (*2) [ML_KWS](https://github.com/OpenNuvoton/ML_KWS) and [ML_G-Sensor](https://github.com/OpenNuvoton/ML_G-Sensor) are able to collect data by Nuvoton EVK board.
+- [ML_Image_Classification](https://github.com/OpenNuvoton/ML_Image_Classification), [ML_VWW](https://github.com/OpenNuvoton/ML_VWW) and [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO) also support the Vela compiler for MCU+NPU use-cases. Other tools/models can also be applied to Vela using the [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO) `vela/` directory as a reference.
+- In each tool/use-case, we also provide example inference code for Nuvoton MCU/MPU devices. 
