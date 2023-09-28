@@ -271,6 +271,7 @@ dependencies:
     - termcolor==1.1.0
     - text-unidecode==1.3
     - tf-slim==1.1.0
+    - tf2cv==0.0.18
     - threadpoolctl==3.1.0
     - tifffile==2022.8.12
     - toml==0.10.2
