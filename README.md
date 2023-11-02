@@ -16,16 +16,20 @@ The Tiny ML Tool provides a platform for training and deployment using TensorFlo
 | [ML_VWW](https://github.com/OpenNuvoton/ML_VWW) | Visual Wake Words | Small MobileNet RGB/gray | In the microcontroller vision use-case, the objective is to identify whether a person (or any other object of interest) is present in an image. |:heavy_check_mark: | |  
 
 ## 2. Installation & Env Create
-### A. Install Anaconda
-- Please download and install [Anaconda](https://www.anaconda.com/download) .
-- If you are already familiar with Python and virtual environments, you can skip this step. However, please make sure to use JupyterLab or Jupyter Notebook as your environment.
-### B. Create [NuEdgeWise](https://github.com/MaxCYCHEN/NuEdgeWise) virtual environment
-- Open JupyterLab by clicking on the icon. 
-- Then, open the "create_env.ipynb" notebook and follow the provided instructions. 
-- Almost all the required Python packages are already installed in this Anaconda environment. However, for ML_Object_Detection, additional installation steps are required. It is recommended to follow the installation steps provided in the [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) repository.
+### A. Create a Python Environment
+- If you are already familiar with Python and virtual environments, you can skip this step. Please be reminded that NuEdgeWise uses Python 3.8.
+- We recommand to use [Miniforge](https://github.com/conda-forge/miniforge), and please download the Miniforge3 basing on your OS.
+- Execute the installation steps for Miniforge3.exe. 
+### B. Create [NuEdgeWise](https://github.com/MaxCYCHEN/NuEdgeWise) Virtual Environment
+- (A.) Open miniforge. 
+- (B.) Execute `conda create --name NuEdgeWise_env  python=3.8.13` to create new python environment.
+- (C.) Execute `conda activate NuEdgeWise_env` to open NuEdgeWise_env environment.
+- (D.) Go to this [NuEdgeWise](https://github.com/MaxCYCHEN/NuEdgeWise) folder(From git clone or download it directly) and Execute `pip install -r requirements.txt`.
+- For Windows users, we provide a batch file to execute these commands all at once.
+- Almost all the required Python packages are already installed in this Conda environment. However, for ML_Object_Detection, additional installation steps are required. It is recommended to follow the installation steps provided in the [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) repository.
 
 ## 3. Choose your use case/application
-- Download the directory from the table above and open Anaconda, selecting the NuEdgeWise environment.
+- Download the directory from the table above and open Miniforge or your python environment, selecting the NuEdgeWise environment.
 - Please refer to the readme in the [Tools](#1-tool-table) section for instructions on how to use it.
 - Now you can start running the Tiny-ML examples from the Jupyter notebook in each [Tools](#1-tool-table).
 ## 4. Description
