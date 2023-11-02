@@ -29,7 +29,7 @@ The Tiny ML Tool provides a platform for training and deployment using TensorFlo
 - Almost all the required Python packages are already installed in this Conda environment. However, for ML_Object_Detection, additional installation steps are required. It is recommended to follow the installation steps provided in the [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) repository.
 
 ## 3. Choose your use case/application
-- Download the directory from the table above and open Anaconda, selecting the NuEdgeWise environment.
+- Download the directory from the table above and open Miniforge or your python environment, selecting the NuEdgeWise environment.
 - Please refer to the readme in the [Tools](#1-tool-table) section for instructions on how to use it.
 - Now you can start running the Tiny-ML examples from the Jupyter notebook in each [Tools](#1-tool-table).
 ## 4. Description
