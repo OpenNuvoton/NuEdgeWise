@@ -2,7 +2,9 @@
 The Tiny ML Tool provides a platform for training and deployment using TensorFlow Lite on Nuvoton's MCU/MPU. 
 ---
 - The NuEdgeWise tools offer Jupyter Notebooks with a user-friendly interface, simplifying the process of working with Tiny ML.
-- Please follow [second](#2-installation--env-create) & [third](#3-choose-your-use-caseapplication) steps to install the Python environment once and explore all the ML tools/examples provided below. 
+- Please follow [second](#2-installation--env-create) & [third](#3-choose-your-use-caseapplication) steps to install the Python environment once and explore all the ML tools/examples provided below.
+- We utilize TensorFlow Lite for Microcontrollers as the inference framework for Nuvoton MCU, and currently, the NuEdgeWise tools provide TensorFlow Lite (TFLite) and TFLite Vela models.
+- Regarding the PyTorch model, please review the [fifth](#5-PyTorch-to-Tflite) step to assist you in converting the PyTorch model to a (TFLite) model.
 
 ## 1. Tool Table
 | Tool | Use Case | Model | M55M1 |M467|MA35D1|Description |
@@ -35,6 +37,7 @@ The Tiny ML Tool provides a platform for training and deployment using TensorFlo
 - Download the directory from the table above and open Miniforge or your python environment, selecting the NuEdgeWise environment.
 - Please refer to the readme in the [Tools](#1-tool-table) section for instructions on how to use it.
 - Now you can start running the Tiny-ML examples from the Jupyter notebook in each [Tools](#1-tool-table).
+- In each tool/use-case, we also provide example inference code for Nuvoton MCU/MPU devices. 
 ## 4. Description
 - Fig1: The general workflow of our tiny ML tools.
 ```mermaid
@@ -61,4 +64,19 @@ flowchart LR
 - All of these tools can be used to train with custom datasets and convert them to deployment-ready formats such as TFLite or TFLite for Microcontrollers.
 - (*2) [ML_KWS](https://github.com/OpenNuvoton/ML_KWS) and [ML_G-Sensor](https://github.com/OpenNuvoton/ML_G-Sensor) are able to collect data by Nuvoton EVK board.
 - [ML_Image_Classification](https://github.com/OpenNuvoton/ML_Image_Classification), [ML_VWW](https://github.com/OpenNuvoton/ML_VWW) and [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO) also support the Vela compiler for MCU+NPU use-cases. Other tools/models can also be applied to Vela using the [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO) `vela/` directory as a reference.
-- In each tool/use-case, we also provide example inference code for Nuvoton MCU/MPU devices. 
+
+
+## 5. PyTorch to Tflite
+- The converting step is PyTorch => ONNX => Tflite.
+- (A.) PyTorch provides a built-in feature for exporting the model to ONNX format: https://pytorch.org/tutorials/beginner/onnx/export_simple_model_to_onnx_tutorial.html
+- (B.) To convert ONNX to TFLite, please refer to [PINTO0309/onnx2tf](https://github.com/PINTO0309/onnx2tf). Follow the installation step provided, and for Nuvoton products, you may utilize the following commands exclusively
+```
+# INT8 Quantization, Full INT8 Quantization
+# INT8 Quantization with INT16 activation, Full INT8 Quantization with INT16 activation,
+# Dynamic Range Quantization
+
+# INT8 Quantization (per-channel)
+onnx2tf -i emotion-ferplus-8.onnx -oiqt
+# INT8 Quantization (per-tensor)
+onnx2tf -i emotion-ferplus-8.onnx -oiqt -qt per-tensor
+```
