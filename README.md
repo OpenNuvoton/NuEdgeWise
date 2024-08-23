@@ -33,6 +33,12 @@ The Tiny ML Tool provides a platform for training and deployment using TensorFlo
 - For Windows users, we provide a batch file to execute these commands all at once.
 - Almost all the required Python packages are already installed in this Conda environment. However, for ML_Object_Detection, additional installation steps are required. It is recommended to follow the installation steps provided in the [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) repository.
 
+### C. Alternatively, Docker CPU version
+- (A.) Download [ML_KWS](https://github.com/OpenNuvoton/ML_KWS), [ML_Image_Classification](https://github.com/OpenNuvoton/ML_Image_Classification) same location as `NuEdgeWise/`
+- (B.) In `NuEdgeWise/`
+- (C.) Build image: `docker build -t nuedgewise:v1 .`
+- (D.) Run container: `docker compose run nuedgewise`
+
 ## 3. Choose your use case/application
 - Download the directory from the table above and open Miniforge or your python environment, selecting the NuEdgeWise environment.
 - Please refer to the readme in the [Tools](#1-tool-table) section for instructions on how to use it.
