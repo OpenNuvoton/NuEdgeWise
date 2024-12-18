@@ -98,6 +98,6 @@ onnx2tf -i emotion-ferplus-8.onnx -oiqt -qt per-tensor
 
 ## 7. MCU ML Firmware
 - Nuvoton also offers various ML application firmware, including models in NuEdgeWise, but not limited to them. Examples include face and body landmark detection.
-- Please contact Nuvoton to access these sample codes.
+- The ML_SampleCode repositories are private. Please contact Nuvoton to request access to these sample codes.
   - [ML_M55M1_SampleCode](https://github.com/OpenNuvoton/ML_M55M1_SampleCode)
   - [ML_M460_SampleCode](https://github.com/OpenNuvoton/ML_M460_SampleCode)
