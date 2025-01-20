@@ -2,7 +2,7 @@ jupyterlab==4.0.7
 ipywidgets==8.0.2
 pydub==0.25.1
 matplotlib==3.6.0
-numpy==1.22.4
+numpy==1.23.0
 scipy==1.9.1
 seaborn==0.12.2
 auditok==0.2.0
@@ -10,6 +10,7 @@ ipyfilechooser==0.6.0
 pyocd==0.34.3
 tensorflow==2.10.0
 tensorboard==2.10.1
+tensorflow-model-optimization==0.8.0
 tqdm==4.64.1
 urllib3==1.26.12
 pyserial==3.5
