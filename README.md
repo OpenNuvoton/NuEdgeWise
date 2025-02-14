@@ -34,7 +34,7 @@ The Tiny ML Tool provides a platform for training and deployment using TensorFlo
 - Execute the installation steps for Miniforge3.exe. 
 ### B. Create [NuEdgeWise](https://github.com/OpenNuvoton/NuEdgeWise) Virtual Environment
 - (A.) Open miniforge. 
-- (B.) Execute `conda create --name NuEdgeWise_env  python=3.8.13` to create new python environment.
+- (B.) Execute `conda create --name NuEdgeWise_env  python=3.9.13` to create new python environment.
 - (C.) Execute `conda activate NuEdgeWise_env` to open NuEdgeWise_env environment.
 - (D.) Go to this [NuEdgeWise](https://github.com/OpenNuvoton/NuEdgeWise) folder(From git clone or download it directly) and Execute `python -m pip install -r requirements.txt`.
 - For Windows users, we provide a batch file to execute these commands all at once.
