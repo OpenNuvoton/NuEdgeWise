@@ -19,26 +19,27 @@ The Tiny ML Tool provides a platform for training and deployment using TensorFlo
 | [ML_KWS](https://github.com/OpenNuvoton/ML_KWS)  | Keyword Spotting | DNN/DS-CNN | :heavy_check_mark: |:heavy_check_mark:|:small_blue_diamond:| Keyword spotting with a small vocabulary (<=1s). |
 | [ML_G-Sensor](https://github.com/OpenNuvoton/ML_G-Sensor) | Gesture Recognition Magic Wand  | CNN| :small_blue_diamond:| :heavy_check_mark:|:small_blue_diamond:|The data consists of 3-dimensional accelerometer readings captured during various gestures. In this Tool, we provide functionality for data collection.|
 | [ML_Image_Classification](https://github.com/OpenNuvoton/ML_Image_Classification) | Image Classification | MobileNet/efficientnet/fdmobilenet/shufflenet | :heavy_check_mark:|:small_blue_diamond: (shufflenet) |:small_blue_diamond:|We utilize transfer learning and fine-tuning techniques, where the pre-trained model is MobileNet trained on the ImageNet dataset. Users have the flexibility to train the model further with their own data.|
-| [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) | Object Detection | SSD_MobileNet_fpnlite v2/v3|:heavy_check_mark: |:x:|:heavy_check_mark:|We utilize the TensorFlow Object Detection API, which supports various models. For our MPU's edge use-case, we opt for a smaller model. If users wish to experiment with SSD_MobileNet_fpnlite_v3, please use the TF1 environment. More details regarding the TF1 environment can be found in the provided link.|
 | [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO) | Object Detection | Yolov8-nano/YoloX-nano/Yolo Fastest v1.1| :heavy_check_mark: |:x:|:heavy_check_mark:|Training YOLO-series models using PyTorch or Darknet and converting them into fully quantized TFLite models for easy deployment.|
 | [ML_Gearbox_Fault_Diagnosis](https://github.com/OpenNuvoton/ML_Gearbox_Fault_Diagnosis) |Anomaly Detection | DNN/Autoencoder | :small_blue_diamond:|:heavy_check_mark:|:small_blue_diamond:|A basic practice for Tiny ML includes training a model, converting it to TFLite format, and deploying it on an EVK.|
 | [ML_VWW](https://github.com/OpenNuvoton/ML_VWW) | Visual Wake Words | Small MobileNet RGB/gray | :heavy_check_mark:|:heavy_check_mark:|:small_blue_diamond:|In the microcontroller vision use-case, the objective is to identify whether a person (or any other object of interest) is present in an image. |
+|[ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) (⚠️ Deprecated, abot Object Detection, user can check [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO))| Object Detection | SSD_MobileNet_fpnlite v2/v3|:heavy_check_mark: |:x:|:heavy_check_mark:|We utilize the TensorFlow Object Detection API, which supports various models. For our MPU's edge use-case, we opt for a smaller model. If users wish to experiment with SSD_MobileNet_fpnlite_v3, please use the TF1 environment. More details regarding the TF1 environment can be found in the provided link.|
 
 - :heavy_check_mark: : The model is ready to run on the device, and we provide example board inference code.
 - :small_blue_diamond: : The model is ready to run on the device, and users need to develop their own inference code.
 - :x: : The model cannot currently run on the device.
 ## 3. Installation & Env Create
 ### A. Create a Python Environment
-- If you are already familiar with Python and virtual environments, you can skip this step. Please be reminded that NuEdgeWise uses Python 3.8.
-- We recommand to use [Miniforge](https://github.com/conda-forge/miniforge), and please download the Miniforge3 basing on your OS.
-- Execute the installation steps for Miniforge3.exe. 
+- If you are already familiar with Python and virtual environments, you can skip this step. Please be reminded that NuEdgeWise uses Python 3.10.
+- Need to install conda (About conda, users can use Anaconda or [Miniforge](https://github.com/conda-forge/miniforge))
+- Execute the installation steps. 
 ### B. Create [NuEdgeWise](https://github.com/OpenNuvoton/NuEdgeWise) Virtual Environment
 - (A.) Open miniforge. 
 - (B.) Execute `conda create --name NuEdgeWise_env  python=3.9.13` to create new python environment.
 - (C.) Execute `conda activate NuEdgeWise_env` to open NuEdgeWise_env environment.
 - (D.) Go to this [NuEdgeWise](https://github.com/OpenNuvoton/NuEdgeWise) folder(From git clone or download it directly) and Execute `python -m pip install -r requirements.txt`.
 - For Windows users, we provide a batch file to execute these commands all at once.
-- Almost all the required Python packages are already installed in this Conda environment. However, for ML_Object_Detection, additional installation steps are required. It is recommended to follow the installation steps provided in the [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) repository.
+- Almost all the required Python packages are already installed in this Conda environment. However, for ML_Object_Detection (⚠️ Deprecated), additional installation steps are required. It is recommended to follow the installation steps provided in the [ML_Object_Detection](https://github.com/OpenNuvoton/ML_Object_Detection) repository.
+- [ML_YOLO](https://github.com/OpenNuvoton/ML_YOLO) also needs further installation for Yolov8n or Yolox-nano.
 
 ### C. Alternatively, Docker CPU version
 - (A.) Download [ML_KWS](https://github.com/OpenNuvoton/ML_KWS), [ML_Image_Classification](https://github.com/OpenNuvoton/ML_Image_Classification) same location as `NuEdgeWise/`
