@@ -96,12 +96,12 @@ if __name__ == '__main__':
     parser.add_argument(
         '--tflite_path',
         type=str,
-        default='',
+        required=True,
         help='Path to tflite file that will be converted.')
     parser.add_argument(
         '--output_path',
         type=str,
-        default='',
+        required=True,
         help='Path used for the output file.')
     parser.add_argument(
         '--model_name',

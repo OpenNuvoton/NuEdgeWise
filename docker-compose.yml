@@ -4,13 +4,11 @@ services:
     command: bash
     stdin_open: true  # `-i`
     tty: true         # `-t`
-    restart: no       # `--rm`
+    restart: "no"
     volumes:
       - /dev/bus/usb:/dev/bus/usb
       - ../ML_KWS:/ML_KWS
       - ../ML_Image_Classification:/ML_Image_Classification
-    ports:
-      - '8888:8888'  
     privileged: true
-    #use the host's network interfaces directly
-    network_mode: host  
+    # Host networking exposes Jupyter's port 8888 directly; "ports" is ignored in this mode.
+    network_mode: host
